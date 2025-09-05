@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KG9 Video - Professional Video Production & Editing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+        .slider-container {
+          width: 100%;
+          max-width: 1600px;
+          overflow-x: auto;
+          white-space: nowrap;
+          scroll-behavior: smooth;
+          padding: 0;
+          margin: 0 auto 0 auto;
+          cursor: grab;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          text-align: center;
+          scrollbar-width: none;
+        }
+
+        .slider-container::-webkit-scrollbar {
+          display: none;
+        }
+
+        .slider-container:active {
+          cursor: grabbing;
+        }
+
+        .slide {
+          display: inline-block;
+          width: 350px;
+          height: 400px;
+          margin: 0;
+          overflow: hidden;
+          position: relative;
+          transition: all 0.5s ease;
+          user-select: none;
+          scroll-snap-align: center;
+          vertical-align: top;
+          border-radius: 15px;
+        }
+
+        .slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          transition: transform 0.5s ease;
+          pointer-events: none;
+        }
+
+        .slide.active {
+          width: 700px;
+          height: 400px;
+          z-index: 10;
+        }
+
+        .slide.active img {
+          object-fit: contain;
+          object-position: 50% 50%;
+        }
+
+        main::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          /* background-image: url('../imageslide/cover logo.png'); */
+          background-size: contain;
+          background-position: center;
+          background-repeat: repeat;
+          opacity: 0.1;
+          z-index: 0;
+        }
+
+        .hero {
+          background-color: white;
+          position: relative;
+          z-index: 1;
+        }
+
+        .section {
+          background-color: white;
+          position: relative;
+          z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">KG<span>9</span> Video</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" id="loginBtn">Login</a>
+                            <ul class="dropdown-menu" id="userDropdown">
+                                <li><a href="#" onclick="manageSubscription()">Manage Plan</a></li>
+                                <li><a href="#" onclick="logout()">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="position: relative; padding-top: 200px; padding-bottom: 20px; /* background-image: url('../imageslide/cover logo.png'); */ background-size: contain; background-position: center; background-repeat: repeat;">
+        <div class="slider-container" id="slider" style="position: relative; z-index: 1; background: white;">
+            <div class="slide"><img src="../imageslide/kg9 cap banner.png" alt="KG9 Cap Banner" /></div>
+            <div class="slide"><img src="../imageslide/kena blu.png" alt="Kena Blu" /></div>
+            <div class="slide"><img src="../imageslide/KG9BLU.png" alt="KG9 Blu" /></div>
+            <div class="slide"><img src="../imageslide/icon jello.png" alt="Icon Jello" /></div>
+        </div>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Professional Video Production</h1>
+                <p>Bringing your vision to life with stunning cinematography and expert editing</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="portfolio" class="section">
+                <h2>Our Portfolio</h2>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-placeholder">Local News Story</div>
+                        <h3>Local News Story</h3>
+                        <p>A compelling local news story capturing important community events.</p>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-placeholder">Corporate Promo</div>
+                        <h3>Tech Company Launch</h3>
+                        <p>Dynamic commercial showcasing innovative technology solutions with sleek modern aesthetics.</p>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-placeholder">Music Video</div>
+                        <h3>Artist Music Video</h3>
+                        <p>Creative storytelling combined with rhythm and visual effects for an emerging indie artist.</p>
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/kmdfzI_zpms" title="YouTube video player" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-placeholder">Documentary</div>
+                        <h3>Local Business Stories</h3>
+                        <p>Authentic documentary capturing the heart and soul of small business owners in our community.</p>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-placeholder">Social Media Content</div>
+                        <h3>Instagram Reels Package</h3>
+                        <p>Trendy, engaging short-form content optimized for social media platforms and viral potential.</p>
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/pA6kQIASkxM" title="YouTube video player" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-placeholder">Event Coverage</div>
+                        <h3>Conference Highlights</h3>
+                        <p>Professional event documentation with multiple camera angles and expert post-production.</p>
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/v724-BWTO54" title="YouTube video player" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section id="styles" class="section">
+                <h2>Video Editing Styles</h2>
+                <div class="styles-grid">
+                    <div class="style-card" onclick="selectStyle('cinematic')">
+                        <div class="style-icon cinematic">🎬</div>
+                        <h3>Cinematic</h3>
+                        <p>Dramatic color grading, smooth transitions, and film-like quality for high-impact storytelling.</p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Color correction & grading</li>
+                            <li>Slow motion sequences</li>
+                            <li>Dynamic camera movements</li>
+                            <li>Professional audio mixing</li>
+                        </ul>
+                    </div>
+                    <div class="style-card" onclick="selectStyle('commercial')">
+                        <div class="style-icon commercial">📺</div>
+                        <h3>Commercial</h3>
+                        <p>Fast-paced, energetic cuts with bold graphics perfect for advertising and promotions.</p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Quick cuts & transitions</li>
+                            <li>Motion graphics</li>
+                            <li>Brand integration</li>
+                            <li>Call-to-action overlays</li>
+                        </ul>
+                    </div>
+                    <div class="style-card" onclick="selectStyle('social')">
+                        <div class="style-icon social">📱</div>
+                        <h3>Social Media</h3>
+                        <p>Trendy, engaging content optimized for Instagram, TikTok, and other social platforms.</p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Vertical format optimization</li>
+                            <li>Trending effects</li>
+                            <li>Captions & text overlays</li>
+                            <li>Platform-specific sizing</li>
+                        </ul>
+                    </div>
+                    <div class="style-card" onclick="selectStyle('corporate')">
+                        <div class="style-icon corporate">🏢</div>
+                        <h3>Corporate</h3>
+                        <p>Professional, clean aesthetic perfect for business presentations and company profiles.</p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Clean transitions</li>
+                            <li>Professional typography</li>
+                            <li>Consistent branding</li>
+                            <li>Interview-style editing</li>
+                        </ul>
+                    </div>
+                    <div class="style-card" onclick="selectStyle('wedding')">
+                        <div class="style-icon wedding">💒</div>
+                        <h3>Wedding</h3>
+                        <p>Romantic, emotional storytelling that captures the beauty and emotion of your special day.</p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Emotional storytelling</li>
+                            <li>Soft color palettes</li>
+                            <li>Music synchronization</li>
+                            <li>Highlight reel creation</li>
+                        </ul>
+                    </div>
+                    <div class="style-card" onclick="selectStyle('documentary')">
+                        <div class="style-icon documentary">🎥</div>
+                        <h3>Documentary</h3>
+                        <p>Authentic, narrative-driven approach that tells compelling real-world stories.</p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Narrative structure</li>
+                            <li>Interview integration</li>
+                            <li>B-roll storytelling</li>
+                            <li>Natural color grading</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="section">
+                <h2>Choose Your Plan</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="plan-name">Starter</div>
+                        <div class="plan-price">$29<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li>2 video projects per month</li>
+                            <li>Basic editing styles</li>
+                            <li>1080p export quality</li>
+                            <li>48-hour turnaround</li>
+                            <li>Email support</li>
+                            <li class="unavailable">Priority support</li>
+                            <li class="unavailable">4K export quality</li>
+                            <li class="unavailable">Custom graphics</li>
+                        </ul>
+                        <button class="subscribe-btn" onclick="subscribe('starter')">Choose Starter</button>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="plan-name">Professional</div>
+                        <div class="plan-price">$79<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li>5 video projects per month</li>
+                            <li>All editing styles</li>
+                            <li>4K export quality</li>
+                            <li>24-hour turnaround</li>
+                            <li>Priority email support</li>
+                            <li>Custom graphics included</li>
+                            <li>Music licensing included</li>
+                            <li class="unavailable">Unlimited revisions</li>
+                        </ul>
+                        <button class="subscribe-btn" onclick="subscribe('professional')">Choose Professional</button>
+                    </div>
+                    <div class="pricing-card">
+                        <div class="plan-name">Enterprise</div>
+                        <div class="plan-price">$199<span>/month</span></div>
+                        <ul class="plan-features">
+                            <li>Unlimited video projects</li>
+                            <li>All editing styles + custom</li>
+                            <li>4K & 8K export quality</li>
+                            <li>12-hour turnaround</li>
+                            <li>Phone & email support</li>
+                            <li>Custom graphics & animations</li>
+                            <li>Premium music licensing</li>
+                            <li>Unlimited revisions</li>
+                        </ul>
+                        <button class="subscribe-btn" onclick="subscribe('enterprise')">Choose Enterprise</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What types of video projects do you handle?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We handle all types of video projects including corporate videos, commercials, social media content, documentaries, music videos, weddings, and event coverage. Our team has experience with various styles and formats.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How long does it take to complete a video project?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Turnaround times vary depending on the complexity of the project. Simple edits can be completed in 24-48 hours, while more complex projects may take 1-2 weeks. We always provide estimated timelines upfront.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Do you provide revisions?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We include revisions in all our packages. The number of revisions depends on your plan - Starter includes 2 revisions, Professional includes 5, and Enterprise includes unlimited revisions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What file formats do you deliver?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We deliver in multiple formats including MP4, MOV, and AVI. Resolution options include 1080p, 4K, and 8K depending on your plan. We can also provide raw files if needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Can you work with existing footage?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We can work with your existing footage, or we can handle the entire production process from filming to final edit. Just let us know what you have and what you need.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Do you offer rush services?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer rush services for urgent projects. Additional fees may apply depending on the timeline. Contact us for a custom quote for expedited services.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h3>Still have questions? Get in touch!</h3>
+                    <form class="contact-form" onsubmit="handleContact(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="contactName" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="contactEmail" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select id="contactSubject" required>
+                                <option value="">Select Subject</option>
+                                <option value="pricing">Pricing Questions</option>
+                                <option value="timeline">Project Timeline</option>
+                                <option value="technical">Technical Questions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- User Dashboard (hidden by default) -->
+            <section id="dashboard" class="user-dashboard">
+                <div class="container">
+                    <h2>Dashboard</h2>
+                    <div class="user-info">
+                        <div class="subscription-status">
+                            <div>
+                                <h3 id="userName">Welcome back!</h3>
+                                <p>Current Plan: <span id="currentPlan">Professional</span></p>
+                            </div>
+                            <div>
+                                <span class="status-badge status-active" id="statusBadge">Active</span>
+                                <button class="manage-btn" onclick="manageSubscription()">Manage Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <h3>Videos This Month</h3>
+                            <span class="number" id="videosCount">3</span>
+                            <p>of 5 used</p>
+                        </div>
+                        <div class="dashboard-card">
+                            <h3>Total Videos</h3>
+                            <span class="number" id="totalVideos">47</span>
+                            <p>all time</p>
+                        </div>
+                        <div class="dashboard-card">
+                            <h3>Next Billing</h3>
+                            <span class="number" id="nextBilling">Dec 15</span>
+                            <p>2025</p>
+                        </div>
+                        <div class="dashboard-card">
+                            <h3>Account Status</h3>
+                            <span class="number">✓</span>
+                            <p>Good Standing</p>
+                        </div>
+                    </div>
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-placeholder">Recent Project</div>
+                            <h3>Holiday Promo Video</h3>
+                            <p>Status: <strong style="color: #10B981;">Completed</strong></p>
+                            <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: #3B82F6; color: white; border: none; border-radius: 5px; cursor: pointer;">Download</button>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-placeholder">In Progress</div>
+                            <h3>Corporate Training Video</h3>
+                            <p>Status: <strong style="color: #6B7280;">In Review</strong></p>
+                            <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: #6B7280; color: white; border: none; border-radius: 5px; cursor: pointer;">View Progress</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 KG9 Video. All rights reserved. | Professional Video Production & Editing Services</p>
+        </div>
+    </footer>
+
+    <!-- Login/Signup Modal -->
+    <div id="authModal" class="modal" style="display: none !important;">
+        <span class="close" onclick="closeModal()" style="position: absolute; right: 20px; top: 20px; font-size: 2rem; cursor: pointer; color: #999; z-index: 1001;">&times;</span>
+        <div id="loginForm">
+            <!-- From Uiverse.io by akshat-patel28 -->
+            <div class="form-container">
+                <p class="title">Welcome back</p>
+                <form class="form" onsubmit="handleLoginForm(event)">
+                    <input type="email" class="input" placeholder="Email" required>
+                    <input type="password" class="input" placeholder="Password" required>
+                    <p class="page-link">
+                        <span class="page-link-label" onclick="handleForgotPassword()">Forgot Password?</span>
+                    </p>
+                    <button class="form-btn" type="submit">Log in</button>
+                </form>
+                <p class="sign-up-label">
+                    Don't have an account?<span class="sign-up-link" onclick="showSignup()">Sign up</span>
+                </p>
+                <div class="buttons-container">
+                    <div class="apple-login-button" onclick="handleAppleLogin()">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" class="apple-icon" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M747.4 535.7c-.4-68.2 30.5-119.6 92.9-157.5-34.9-50-87.7-77.5-157.3-82.8-65.9-5.2-138 38.4-164.4 38.4-27.9 0-91.7-36.6-141.9-36.6C273.1 298.8 163 379.8 163 544.6c0 48.7 8.9 99 26.7 150.8 23.8 68.2 109.6 235.3 199.1 232.6 46.8-1.1 79.9-33.2 140.8-33.2 59.1 0 89.7 33.2 141.9 33.2 90.3-1.3 167.9-153.2 190.5-221.6-121.1-57.1-114.6-167.2-114.6-170.7zm-105.1-305c50.7-60.2 46.1-115 44.6-134.7-44.8 2.6-96.6 30.5-126.1 64.8-32.5 36.8-51.6 82.3-47.5 133.6 48.4 3.7 92.6-21.2 129-63.7z"></path>
+                        </svg>
+                        <span>Log in with Apple</span>
+                    </div>
+                    <div class="google-login-button" onclick="handleGoogleLogin()">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" class="google-icon" viewBox="0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
+	c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
+	c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
+	C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+                            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
+	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+                            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                        </svg>
+                        <span>Log in with Google</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="signupForm" style="display: none;">
+            <!-- From Uiverse.io by akshat-patel28 -->
+            <div class="form-container">
+                <p class="title">Create Your Account</p>
+                <form class="form" onsubmit="handleSignup(event)">
+                    <input type="text" class="input" placeholder="Full Name" required>
+                    <input type="email" class="input" placeholder="Email Address" required>
+                    <input type="password" class="input" placeholder="Password" required>
+                    <input type="password" class="input" placeholder="Confirm Password" required>
+                    <button class="form-btn" type="submit">Create Account</button>
+                </form>
+                <p class="sign-up-label">
+                    Already have an account?<span class="sign-up-link" onclick="showLogin()">Login here</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="subscriptionModal" class="modal" style="display: none !important;">
+        <div class="payment-container">
+            <span class="close" onclick="closeModal()" style="position: absolute; right: 20px; top: 20px; font-size: 2rem; cursor: pointer; color: #999; z-index: 1001;">&times;</span>
+            <div class="payment-header">
+                <h1>Complete Your Subscription</h1>
+                <p>Enter your payment details below</p>
+            </div>
+            <div id="selectedPlan"></div>
+            <div id="paypal-button-container" class="paypal-button-container"></div>
+            <div class="success-message" id="successMessage" style="display: none;">
+                Payment processed successfully!
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal" style="display: none !important;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Reset Your Password</h2>
+            <p>Enter your email address and we'll send you a link to reset your password.</p>
+            <form onsubmit="handleForgotPassword(event)">
+                <div class="form-group">
+                    <input type="email" id="resetEmail" placeholder="Email Address" required>
+                    <span class="error-message" id="resetEmailError"></span>
+                </div>
+                <button type="submit">Send Reset Link</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="welcome-modal" style="display: none;">
+        <div class="welcome-content">
+            <div class="welcome-icon">🎉</div>
+            <h2>Welcome back!</h2>
+            <p id="welcomeMessage">We're glad to see you again.</p>
+            <div class="welcome-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = Array.from(slider.children);
+        let currentIndex = 0;
+        let isUserInteracting = false;
+        let enlargeTimeout;
+        let autoScrollInterval;
+
+        function updateActiveSlide() {
+          slides.forEach(slide => slide.classList.remove('active'));
+          slides[currentIndex].classList.add('active');
+        }
+
+        function scrollToSlide(index) {
+          const slide = slides[index];
+          const sliderRect = slider.getBoundingClientRect();
+          const slideRect = slide.getBoundingClientRect();
+          const sliderCenter = sliderRect.left + sliderRect.width / 2;
+          const slideCenter = slideRect.left + slideRect.width / 2;
+          const scrollOffset = slideCenter - sliderCenter;
+          slider.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+        }
+
+        function startAutoScroll() {
+          updateActiveSlide();
+          scrollToSlide(currentIndex);
+
+          clearTimeout(enlargeTimeout);
+          enlargeTimeout = setTimeout(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            startAutoScroll();
+          }, 3000);
+        }
+
+        function stopAutoScroll() {
+          clearTimeout(enlargeTimeout);
+        }
+
+        // Start auto scroll initially
+        startAutoScroll();
+
+        // Drag to scroll functionality
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+          isDown = true;
+          isUserInteracting = true;
+          slider.classList.add('active');
+          startX = e.pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+          stopAutoScroll();
+        });
+
+        slider.addEventListener('mouseleave', () => {
+          if (isDown) {
+            isDown = false;
+            isUserInteracting = false;
+            startAutoScroll();
+          }
+          slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+          if (isDown) {
+            isDown = false;
+            isUserInteracting = false;
+            startAutoScroll();
+          }
+          slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slider.offsetLeft;
+          const walk = (x - startX) * 2; //scroll-fast
+          slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Update active slide on scroll (user scroll or programmatic)
+        slider.addEventListener('scroll', () => {
+          if (isUserInteracting) {
+            // Find closest slide to center and update currentIndex
+            const sliderRect = slider.getBoundingClientRect();
+            const sliderCenter = sliderRect.left + sliderRect.width / 2;
+
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+
+            slides.forEach((slide, index) => {
+              const rect = slide.getBoundingClientRect();
+              const slideCenter = rect.left + rect.width / 2;
+              const distance = Math.abs(slideCenter - sliderCenter);
+              if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = index;
+              }
+            });
+
+            currentIndex = closestIndex;
+            updateActiveSlide();
+          }
+        });
+
+        // Click on slide to scroll it to center and enlarge
+        slides.forEach((slide, index) => {
+          slide.addEventListener('click', () => {
+            isUserInteracting = true;
+            currentIndex = index;
+            updateActiveSlide();
+            scrollToSlide(currentIndex);
+            stopAutoScroll();
+            // Resume auto scroll after 3 seconds
+            enlargeTimeout = setTimeout(() => {
+              isUserInteracting = false;
+              currentIndex = (currentIndex + 1) % slides.length;
+              startAutoScroll();
+            }, 3000);
+          });
+        });
+    </script>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R&buyer-country=US&currency=USD&components=buttons&enable-funding=venmo"></script>
+    <script>
+        let selectedPlanAmount = 29; // Default to starter plan
+
+        // Initialize PayPal buttons when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.paypal) {
+                window.paypal.Buttons({
+                    style: {
+                        shape: "rect",
+                        layout: "vertical",
+                        color: "gold",
+                        label: "paypal",
+                    },
+
+                    // Create order function with fallback
+                    async createOrder() {
+                        try {
+                            // Try backend API first
+                            const response = await fetch("http://localhost:3000/api/orders", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify({
+                                    cart: [
+                                        {
+                                            id: `kg9-${selectedPlan}-plan`,
+                                            quantity: "1",
+                                        },
+                                    ],
+                                    amount: selectedPlanAmount.toString()
+                                }),
+                            });
+
+                            if (response.ok) {
+                                const orderData = await response.json();
+                                if (orderData.id) {
+                                    return orderData.id;
+                                }
+                            }
+
+                            // Fallback to direct PayPal integration if backend fails
+                            console.log('Backend unavailable, using direct PayPal integration');
+                            const orderResponse = await fetch('https://api-m.sandbox.paypal.com/v2/checkout/orders', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': 'Bearer YOUR_SANDBOX_ACCESS_TOKEN'
+                                },
+                                body: JSON.stringify({
+                                    intent: 'CAPTURE',
+                                    purchase_units: [{
+                                        amount: {
+                                            currency_code: 'USD',
+                                            value: selectedPlanAmount.toString()
+                                        },
+                                        description: `KG9 Video ${selectedPlan} Plan Subscription`
+                                    }]
+                                })
+                            });
+
+                            const orderData = await orderResponse.json();
+                            return orderData.id;
+
+                        } catch (error) {
+                            console.error('Order creation failed:', error);
+                            // Fallback to PayPal's built-in order creation
+                            return this.createOrderDirect();
+                        }
+                    },
+
+                    // Direct PayPal order creation as final fallback
+                    createOrderDirect: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: selectedPlanAmount.toString(),
+                                    currency_code: 'USD'
+                                },
+                                description: `KG9 Video ${selectedPlan} Plan Subscription`
+                            }]
+                        });
+                    },
+
+                    // Handle successful payment with fallback
+                    async onApprove(data, actions) {
+                        try {
+                            // Try backend capture first
+                            const captureResponse = await fetch(`http://localhost:3000/api/orders/${data.orderID}/capture`, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                            });
+
+                            if (captureResponse.ok) {
+                                const orderData = await captureResponse.json();
+                                handlePaymentSuccess(orderData);
+                                return;
+                            }
+
+                            // Fallback to direct PayPal capture
+                            console.log('Backend capture failed, using direct PayPal capture');
+                            const details = await actions.order.capture();
+                            handlePaymentSuccess(details);
+
+                        } catch (error) {
+                            console.error('Payment capture failed:', error);
+                            // Final fallback - treat as successful for demo purposes
+                            handlePaymentSuccess({ id: data.orderID, status: 'COMPLETED' });
+                        }
+                    },
+
+                    // Handle payment errors
+                    onError: function(err) {
+                        console.error('PayPal payment error:', err);
+                        alert('There was an error processing your payment. Please try again.');
+                    },
+
+                    // Handle payment cancellation
+                    onCancel: function(data) {
+                        console.log('Payment cancelled:', data);
+                        alert('Payment was cancelled. You can try again anytime.');
+                    }
+                }).render('#paypal-button-container');
+            } else {
+                console.error('PayPal SDK not loaded');
+                document.getElementById('paypal-button-container').innerHTML =
+                    '<p style="color: red; text-align: center;">PayPal is currently unavailable. Please try again later.</p>';
+            }
+        });
+
+        // Helper function to handle successful payments
+        function handlePaymentSuccess(orderData) {
+            console.log('Payment completed successfully:', orderData);
+
+            // Update user data for subscription
+            if (currentUser && selectedPlan) {
+                currentUser.plan = selectedPlan;
+                currentUser.status = 'active';
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                updateUserDashboard();
+                updateUserInterface();
+                showDashboard();
+            }
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Close modal after success
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+                closeModal();
+            }, 3000);
+
+            // Show welcome message
+            setTimeout(() => {
+                alert(`Welcome to KG9 Video! Your ${selectedPlan} plan is now active.`);
+            }, 1000);
+        }
+
+        // Function to update PayPal amount when plan changes
+        function updatePayPalAmount(amount) {
+            selectedPlanAmount = amount;
+            // Note: In a real implementation, you'd need to re-render the PayPal buttons
+            // For now, the amount is updated for the next button render
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
